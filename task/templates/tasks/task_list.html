@@ -9,13 +9,13 @@
     <h1> Lista de Tarefas: </h1>
  <ul>
     {% for task in task %}
-    <li>{{ task.title }} - {% if task.completed %} completa! {% else %} Pendente! 
+    <li>{{ task.title }} - {% if task.completed %} completa! {% else %} Pendente! </li>
+    <a href="{% url 'delete_task' task.id %}">Excluir</a>
         {% endif %} 
-    </li>
+    
 
     {% endfor %}
  </ul>   
  <a href="{% url 'add_task' %}">Adcionar novas Tarefas</a>
- <a href="{% url 'delete_task' task.id %}">Excluir</a>
 </body>
 </html>
