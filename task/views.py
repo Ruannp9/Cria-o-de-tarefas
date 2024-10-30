@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Task
+from .models import Task, Aluno
 
 def task_list(request):
     tasks = Task.objects.all()
@@ -18,3 +18,17 @@ def delete_task(request, task_id):
     task.delete()
     return redirect('task_list')
 # Create your views here.
+
+def cadastro_escola(request):
+    escola = Aluno.objects.all()
+    return render (request, 'escola/cadastro_escola.html', {'escola': escola})
+
+def cadastro_adicionar(request):
+    if request.method == 'POST':
+        cadastrar = request.POST.get('cadastrar')
+        if cadastrar:
+            Aluno.objects.create(nome=cadastrar)
+            return redirect('cadastro_escola')
+    return render(request, 'escola/cadastro_adicionar.html')
+            
+            

@@ -1,0 +1,11 @@
+<hi> Adicionar Cadstro do Aluno </h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="cadastrar" placeholder= "Cadastro Aluno">
+        <button type="submit">Adicionar</button>
+    </form>
+    
+    <a href="{% url 'cadastro_escola' %}">Voltar para inicio</a>
+    
+    </body>
+    </html>

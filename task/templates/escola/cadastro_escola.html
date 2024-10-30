@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Django</title>
+</head>
+<body>
+    <h1> Lista de Cadastro: </h1>
+    <ul>
+        {% for cadastro in escola %}
+        <li>{{ cadastro.nome }} - {{ cadastro.email }}
+
+        {% endfor %}
+    </ul>   
+    <a href="{% url 'cadastro_adicionar' %}">Cadastrar Novos Alunos</a>
+</body>
+</html>
