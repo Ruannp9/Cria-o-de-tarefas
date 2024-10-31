@@ -9,8 +9,13 @@
     <h1> Lista de Cadastro: </h1>
     <ul>
         {% for cadastro in escola %}
-        <li>{{ cadastro.nome }} - {{ cadastro.email }}
+        <li>{{ cadastro.nome }} - {{ cadastro.email }} -
 
+            <a href="{% url 'delete_cadastro' cadastro.id %}">Excluir</a> 
+            <a href="{% url 'atualizar_cadastro' cadastro.id %}">Editar</a>   
+        
+        </li>
+        
         {% endfor %}
     </ul>   
     <a href="{% url 'cadastro_adicionar' %}">Cadastrar Novos Alunos</a>

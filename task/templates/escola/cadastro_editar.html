@@ -1,0 +1,12 @@
+<hi> Editar Cadastro do Aluno </h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="nome" placeholder= "Atualizar nome do Aluno">
+        <input type="email" name="email" placeholder= "Atualizar o email do Aluno">
+        <button type="submit">Editar</button>
+    </form>
+    
+    <a href="{% url 'cadastro_escola' %}">Voltar para inicio</a>
+    
+    </body>
+    </html>

@@ -1,7 +1,9 @@
-<hi> Adicionar Cadstro do Aluno </h1>
+<hi> Adicionar Cadastro do Aluno </h1>
     <form method="POST">
         {% csrf_token %}
-        <input type="text" name="cadastrar" placeholder= "Cadastro Aluno">
+        <input type="text" name="nome" placeholder= "Cadastro Aluno">
+        <input type="email" name="email" placeholder= "Cadastrar o email do Aluno">
+
         <button type="submit">Adicionar</button>
     </form>
     
